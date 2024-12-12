@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PilotHive - Forum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <a href="../homepage/index.html">
+                        <h1>PilotHive</h1>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="dropdown">
+                        <a href="../dronestore/index.html">DRONE STORE</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <div class="menu-section">
+                                    <h3>Consumer Drones</h3>
+                                    <ul>
+                                        <li><a href="#">Entry Level</a></li>
+                                        <li><a href="#">Mid Range</a></li>
+                                        <li><a href="#">Professional</a></li>
+                                        <li><a href="#">Enterprise</a></li>
+                                        <li><a href="#">Custom Build</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3>Parts & Upgrades</h3>
+                                    <ul>
+                                        <li><a href="#">Flight Systems</a></li>
+                                        <li><a href="#">Power Systems</a></li>
+                                        <li><a href="#">Camera Systems</a></li>
+                                        <li><a href="#">Frames & Parts</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-preview">
+                                    <img src="https://www-cdn.djiits.com/cms/uploads/0cb5db0ca2ba38c9fd446070616bf420.png" alt="Featured Drone">
+                                    <p>Featured: Custom Racing Drone</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" class="active">FORUM</a></li>
+                    <li class="dropdown">
+                        <a href="#landscape">LANDSCAPE</a>
+                        <div class="dropdown-menu landscape-menu">
+                            <div class="dropdown-content landscape-content">
+                                <div class="map-section">
+                                    <h3>Popular Flying Spots</h3>
+                                    <div class="landscape-map">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280812956!2d-74.11976341508873!3d40.70531100753592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1697663751792!5m2!1sen!2sus"
+                                            width="100%"
+                                            height="300"
+                                            style="border:0;"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
+                                    </div>
+                                    <div class="location-list">
+                                        <div class="location-item">
+                                            <span class="location-icon">📍</span>
+                                            <span>Central Park</span>
+                                        </div>
+                                        <div class="location-item">
+                                            <span class="location-icon">📍</span>
+                                            <span>Brooklyn Bridge Park</span>
+                                        </div>
+                                        <div class="location-item">
+                                            <span class="location-icon">📍</span>
+                                            <span>Liberty State Park</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#services">SERVICES</a>
+                        <div class="dropdown-menu services-menu">
+                            <div class="dropdown-content">
+                                <div class="menu-section">
+                                    <h3>Repair & Maintenance</h3>
+                                    <ul>
+                                        <li><a href="#">Drone Repair Service</a></li>
+                                        <li><a href="#">Parts Replacement</a></li>
+                                        <li><a href="#">Performance Check</a></li>
+                                        <li><a href="#">Firmware Update</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3>Events & Activities</h3>
+                                    <ul>
+                                        <li><a href="#">Flight Training</a></li>
+                                        <li><a href="#">Photography Workshop</a></li>
+                                        <li><a href="#">Group Flying Events</a></li>
+                                        <li><a href="#">Competition Registration</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3>Support & Help</h3>
+                                    <ul>
+                                        <li><a href="#">Technical Support</a></li>
+                                        <li><a href="#">Flight Consultation</a></li>
+                                        <li><a href="#">Beginner's Guide</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="#login" class="login-link">
+                    <span class="avatar-emoji">☺️</span>
+                    <span>LOGIN</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="forum-main">
+        <!-- 分类导航 -->
+        <div class="category-nav">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#" class="active">All Topics</a></li>
+                <li><a href="#">Drone Photography</a></li>
+                <li><a href="#">Technical Discussion</a></li>
+                <li><a href="#">Flight Tips</a></li>
+                <li><a href="#">Equipment Reviews</a></li>
+                <li><a href="#">Events & Meetups</a></li>
+            </ul>
+        </div>
+
+        <!-- 帖子列表区域 -->
+        <div class="posts-container">
+            <div class="posts-header">
+                <h1>Latest Discussions</h1>
+                <button class="new-post-btn">New Post</button>
+            </div>
+            
+            <div class="posts-list">
+                <!-- 示例帖子 -->
+                <div class="post-card">
+                    <div class="post-votes">
+                        <button class="vote-btn">▲</button>
+                        <span>42</span>
+                        <button class="vote-btn">▼</button>
+                    </div>
+                    <div class="post-content">
+                        <h3>Best settings for night photography with Mavic 3</h3>
+                        <p>I've been trying to capture the city lights but...</p>
+                        <div class="post-meta">
+                            <span class="author">Posted by DroneEnthusiast</span>
+                            <span class="time">2 hours ago</span>
+                            <span class="comments">24 comments</span>
+                        </div>
+                        <div class="post-tags">
+                            <span class="tag">Photography</span>
+                            <span class="tag">Mavic 3</span>
+                            <span class="tag">Night Shots</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 更多帖子... -->
+            </div>
+        </div>
+
+        <!-- 热门话题侧边栏 -->
+        <div class="trending-sidebar">
+            <h2>Trending Topics</h2>
+            <div class="trending-list">
+                <div class="trending-item">
+                    <span class="trend-number">#1</span>
+                    <div class="trend-content">
+                        <h4>New DJI Mavic 4 Rumors</h4>
+                        <p>1.2k discussions</p>
+                    </div>
+                </div>
+                <!-- 更多热门话题... -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "-PX4XgHMu9dNzQpH68yeh",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="-PX4XgHMu9dNzQpH68yeh"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html> 

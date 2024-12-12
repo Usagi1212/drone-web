@@ -1,0 +1,1106 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    margin: 0 auto;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.login-link:hover {
+    color: rgb(237, 119, 88);
+}
+
+.avatar-emoji {
+    font-size: 1.6rem;
+    line-height: 1;
+    margin-right: 0.2rem;
+}
+
+.logo h1 {
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: rgb(237, 119, 88);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: rgb(237, 119, 88);
+    transition: width 0.3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* 视频背景区域样式 */
+.hero-section {
+    height: 100vh;
+    display: flex;
+}
+
+.hero-left {
+    flex: 1;
+    background-color: rgb(237, 119, 88);
+    display: flex;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.hero-right {
+    flex: 1;
+    overflow: hidden;
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.hero-content {
+    color: white;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 主要内容区域样式 */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background: #f8f8f8;
+}
+
+/* 产品展示区域样式 */
+.products-section {
+    padding: 8rem 2rem;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 添加分隔线 */
+.products-section::after,
+.events-schedule::after,
+.features-section::after,
+.contact-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 2px;
+    background: linear-gradient(to right, 
+        transparent,
+        rgba(255, 123, 95, 0.1),
+        rgba(255, 123, 95, 0.2) 30%,
+        rgba(255, 123, 95, 0.2) 70%,
+        rgba(255, 123, 95, 0.1),
+        transparent
+    );
+}
+
+.products-slider-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+/* 导航按钮样式 */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.products-slider-container:hover .slider-nav {
+    opacity: 1;
+}
+
+.slider-nav:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.slider-nav.prev {
+    left: 1rem;
+}
+
+.slider-nav.next {
+    right: 1rem;
+}
+
+.nav-icon {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.product-grid {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* 隐藏滚动条 */
+.product-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    flex: 0 0 400px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.product-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+    line-height: 1.3;
+}
+
+.product-content p {
+    color: #666;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* 活动日程表样式 */
+.events-schedule {
+    padding: 8rem 2rem;
+    background: #f8f8f8;
+}
+
+.events-schedule h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.event-card {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-date {
+    background: #FF7B5F;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+}
+
+.event-date .date {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.event-date .time {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.event-details {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-details h3 {
+    color: #333;
+    font-weight: 600;
+}
+
+.event-info {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.8rem;
+    color: #666;
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+.event-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.type {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+}
+
+.type.photo {
+    background: #f0f7ff;
+    color: #0066cc;
+}
+
+.type.race {
+    background: #fff0f3;
+    color: #e91e63;
+}
+
+.type.training {
+    background: #f0fff4;
+    color: #00a854;
+}
+
+.upcoming {
+    border: 2px solid #FF7B5F;
+    position: relative;
+}
+
+.upcoming::before {
+    content: 'UPCOMING';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #FF7B5F;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* 联系我们区域样式 */
+.contact-section {
+    padding: 8rem 2rem;
+    background: #f8f8f8;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #000;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+}
+
+.info-item a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-item a:hover {
+    color: #FF7B5F;
+}
+
+.business-hours {
+    margin-top: 2rem;
+}
+
+.business-hours h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    /* 导航栏响应式 */
+    .nav-menu {
+        display: none;
+    }
+
+    /* 关于区域响应式 */
+    .about-section {
+        flex-direction: column;
+    }
+    .about-right {
+        padding: 3rem 1.5rem;
+    }
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    .about-text {
+        font-size: 1rem;
+    }
+
+    /* 联系区域响应式 */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    .map-container {
+        min-height: 300px;
+    }
+
+    /* 功能区域响应式 */
+    .features-list {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    .feature-header {
+        padding: 1rem;
+        padding-right: 2.5rem;
+    }
+    .feature-header h3 {
+        font-size: 1.2rem;
+    }
+    .feature-header p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+}
+
+/* 功能列表样式 */
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.feature-header {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    position: relative;
+    padding-right: 3rem;
+}
+
+.feature-header h3 {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.feature-header p {
+    color: #666;
+    font-size: 1rem;
+    max-width: 100%;
+}
+
+.expand-icon {
+    color: #FF7B5F;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    pointer-events: none;
+}
+
+.feature-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    background: #f8f8f8;
+    opacity: 0;
+}
+
+.feature-item.active .feature-content {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.feature-content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.feature-content p {
+    padding: 2rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.feature-content .outline-button {
+    margin: 0 2rem 2rem;
+}
+
+.feature-item.active .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* 天机器人样式 (暂时隐藏) */
+/*
+.chatbot-container {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 1000;
+}
+
+.chat-bubble {
+    width: 60px;
+    height: 60px;
+    background: rgb(237, 119, 88);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+.chat-icon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-window.hidden {
+    display: none;
+}
+.chat-header {
+    padding: 1rem;
+    background: #FF7B5F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 1rem;
+    max-width: 80%;
+}
+
+.user-message {
+    margin-left: auto;
+    background: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 12px 12px 0 12px;
+}
+
+.bot-message {
+    background: #FF7B5F;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 12px 12px 12px 0;
+}
+
+.chat-input {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.chat-input button {
+    padding: 0.5rem 1rem;
+    background: rgb(237, 119, 88);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: rgb(237, 119, 88);
+}
+*/
+/* 网站介绍区域样式 */
+.about-section {
+    display: flex;
+    min-height: 600px;
+    background: #fff;
+    position: relative;
+}
+
+.about-left {
+    flex: 1;
+    overflow: hidden;
+}
+
+.about-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-right {
+    flex: 1;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.subtitle {
+    color: rgb(237, 119, 88);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    line-height: 1.2;
+}
+
+.about-text {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.outline-button {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid rgb(237, 119, 88);
+    color: rgb(237, 119, 88);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.outline-button:hover {
+    background: rgb(237, 119, 88);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+    }
+
+    .about-right {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+.section-header {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #000;
+    line-height: 1.2;
+}
+
+:root {
+    --primary-color: #FF7B5F;
+    --primary-hover: #ff6b4a;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f8f8f8;
+    --white: #fff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 下拉菜单样式 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 800px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.menu-section h3 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.menu-section ul {
+    list-style: none;
+}
+
+.menu-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.menu-section ul li a {
+    color: #666;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.menu-section ul li a:hover {
+    color: #FF7B5F;
+}
+
+.menu-preview {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.menu-preview img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.menu-preview p {
+    color: #333;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Landscape 下拉菜单特殊样式 */
+.landscape-menu {
+    min-width: 600px;
+    padding: 1.5rem;
+}
+
+.landscape-content {
+    display: block;
+    padding: 0;
+}
+
+.map-section h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.landscape-map {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.location-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #f8f8f8;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.location-item:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.location-icon {
+    font-size: 1.2rem;
+}
+
+.location-item span:last-child {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* 登录弹窗样式 */
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.login-modal.hidden {
+    display: none;
+}
+
+.login-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #FF7B5F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #ff6b4a;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
