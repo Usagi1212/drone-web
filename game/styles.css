@@ -1,0 +1,75 @@
+.game-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.score-board {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.game-area {
+    width: 600px;
+    height: 400px;
+    border: 2px solid #333;
+    margin: 0 auto;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+#ufo {
+    position: absolute;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+    user-select: none;
+    transform-origin: center;
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgb(237, 119, 88);
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: rgb(220, 100, 70);
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.back-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgb(237, 119, 88);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.back-button a:hover {
+    background: rgb(220, 100, 70);
+} 
